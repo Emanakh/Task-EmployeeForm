@@ -1,0 +1,11 @@
+﻿@model EmployeeMVC.Models.DTOs.EmployeeDTO;
+
+<div class="employee-details">
+    <h4>Name: @Model.Name</h4>
+    <p>Gender: @Model.Gender</p>
+    <p>Role: @Model.JobRole</p>
+    <p>First Appointment? :@Model.FirstAppointment</p>
+    <p>Srart Date:  @Model.StartDate.ToShortDateString()</p>
+    <p>Notes: @Model.Notes</p>
+    
+</div>

@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Task_EmployeeForm.Configuration;
 using Task_EmployeeForm.Data;
+using Task_EmployeeForm.Models;
 using Task_EmployeeForm.Models.DTOs;
 using Task_EmployeeForm.Repositories;
 using Task_EmployeeForm.Repositories.IRepositories;
@@ -18,6 +19,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(option =>
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 builder.Services.AddScoped<IEmployeeRepo, EmployeeRepo>();
 builder.Services.AddScoped<ApplicationDbContext>();
+builder.Services.AddScoped<DapperContext>();
+builder.Services.AddScoped<IGenericRepo<Employee>, GenericRepo<Employee>>();
+
 builder.Services.AddScoped<APIResponse>();
 builder.Services.AddAutoMapper(typeof(MappingConfig));
 
@@ -40,6 +44,7 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    app.UseExceptionHandler("/error");
     app.UseSwagger();
     app.UseSwaggerUI();
 }

@@ -1,0 +1,65 @@
+﻿@model IEnumerable<EmployeeMVC.Models.DTOs.EmployeeDTO>
+
+
+<div class="container p-4 border">
+	<div class="row pb-2">
+		<div class="col">
+			<h1 class="text-primary"> Employees List </h1>
+		</div>
+		<div class=" col text-end  p-1">
+			<a asp-controller="Employee" asp-action="AddEmployee" class="btn btn-outline-primary">
+				<i class="bi bi-plus-square-fill"></i>
+				Add new Employee
+			</a>
+		</div>
+	</div>
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>
+					Name
+				</th>
+				<th>
+					Gender
+				</th>
+				<th>
+					Role
+				</th>
+				<th>
+					Options
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var item in Model)
+			{
+				@* onclick="openModal(@item.Id) *@
+				<tr>
+					<td>@item.Name </td>
+					<td>@item.Gender</td>
+					<td>@item.JobRole </td>
+					<td>
+						<div class="dropdown">
+							<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Actions
+							</button>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+								<a asp-controller="Employee" asp-route-id="@item.Id" asp-action="UpdateEmployee" class="dropdown-item">Update</a>
+								<a asp-controller="Employee" asp-route-id="@item.Id" asp-action="DeleteEmployee" class="dropdown-item">Delete</a>
+							</div>
+						</div>
+
+						@*  <a asp-controller="Employee" asp-route-id="@item.Id" asp-action="UpdateEmployee" class="btn btn-success"> Update
+					</a>
+
+					<a asp-controller="Employee" asp-route-id="@item.Id" asp-action="DeleteEmployee" class="btn btn-success"> Delete
+					<i class="bi bi-pencil-square"></i>
+					</a> *@
+
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+
+</div>

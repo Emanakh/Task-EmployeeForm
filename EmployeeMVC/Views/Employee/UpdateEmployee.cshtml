@@ -1,0 +1,22 @@
+﻿@model EmployeeMVC.Models.DTOs.EmployeeDTO;
+
+
+<form asp-action="UpdateEmployee">
+    <br />
+    <div class="container border p-3">
+        <h1 class="text-primary">Add Employee</h1>
+        <hr />
+
+        <div class="row">
+            <partial name="EmployeeForm" model="@Model" />
+
+            <div class="col-5">
+                <input type="submit" value="Update" class="btn btn-success form-control" />
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

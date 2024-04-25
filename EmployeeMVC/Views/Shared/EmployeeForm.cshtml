@@ -1,0 +1,73 @@
+﻿@model EmployeeMVC.Models.DTOs.EmployeeDTO;
+
+
+<div class="col-2">
+    <label asp-for="Name" class="control-label pt-2" style="font-size:20px;"></label>
+</div>
+<div class="col-10 pb-3">
+    <input asp-for="Name" class="form-control" />
+    <span asp-validation-for="Name" class="text-danger"></span>
+</div>
+
+<div class="row">
+    <div class="col-2">
+        <label asp-for="Gender" class="control-label pt-2" style="font-size:20px;"></label>
+    </div>
+    <div class="col-10">
+        <div class="form-group d-inline-block">
+            <div class="form-check form-check-inline">
+                <input asp-for="Gender" class="form-check-input" type="radio" value="Male" id="genderMale">
+                <label class="form-check-label" for="genderMale">Male</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input asp-for="Gender" class="form-check-input" type="radio" value="Female" id="genderFemale">
+                <label class="form-check-label" for="genderFemale">Female</label>
+            </div>
+            <span asp-validation-for="Gender" class="text-danger"></span>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-2">
+    <label asp-for="JobRole" class="control-label pt-2" style="font-size:20px;"></label>
+</div>
+<div class="col-10 pb-3">
+    <select asp-for="JobRole" class="form-control">
+        <option value=""> Select Role </option>
+        <option value="Manager">Manager</option>
+        <option value="Developer">Developer</option>
+        <option value="Designer">Designer</option>
+    </select>
+    <span asp-validation-for="JobRole" class="text-danger"></span>
+</div>
+
+<div class="col-2">
+    <label asp-for="StartDate" class="control-label pt-2" style="font-size:20px;"></label>
+</div>
+<div class="col-10 pb-3">
+    <input asp-for="StartDate" class="form-control" />
+    <span asp-validation-for="StartDate" class="text-danger"></span>
+</div>
+
+
+<div class="col-2">
+    <label asp-for="FirstAppointment" class="control-label pt-2" style="font-size: 20px;"></label>
+</div>
+<div class="col-10 pb-3">
+    <div class="form-check">
+        <input asp-for="FirstAppointment" class="form-check-input" />
+    </div>
+    <span asp-validation-for="FirstAppointment" class="text-danger"></span>
+</div>
+
+<div class="col-2">
+    <label asp-for="Notes" class="control-label pt-2" style="font-size:20px;"></label>
+</div>
+<div class="col-10 pb-3">
+    <textarea asp-for="Notes" class="form-control" rows="3"></textarea>
+    <span asp-validation-for="Notes" class="text-danger"></span>
+</div>
+<div class="col-5 offset-2">
+    <a asp-action="Index" asp-controller="Employee" class="btn-primary btn form-control ">Back to List</a>
+</div>

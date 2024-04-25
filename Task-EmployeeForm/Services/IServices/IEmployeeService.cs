@@ -5,7 +5,12 @@ namespace Task_EmployeeForm.Services.IServices
 {
     public interface IEmployeeService
     {
-        Task<Employee> Add(EmployeeDTO dto);
+		Task RemoveAsync(Employee dto);
+		Task UpdateAsync(EmployeeUpdateDTO dto);
+		Task<Employee> GetAsync(int id);
+
+		Task<IEnumerable<Employee>> GetAllAsync();
+		Task<Employee> Add(EmployeeDTO dto);
 
     }
 }
