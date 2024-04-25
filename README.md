@@ -16,3 +16,9 @@
 - Client Side Validation 
 - Bootstrap Framework
 
+#  Functionality
+- Add new Employee
+- Remoove Employee
+- Update Employee
+- View Employee Date by Double clicking the table row
+  
