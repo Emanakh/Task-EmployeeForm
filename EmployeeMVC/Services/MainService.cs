@@ -56,7 +56,7 @@ namespace EmployeeMVC.Services
 				HttpResponseMessage apiResponse = await client.SendAsync(message);
                 //convert the HTTP content to a string
                 var apiContent = await apiResponse.Content.ReadAsStringAsync();
-                //conert to generic T object
+
                 _response = JsonConvert.DeserializeObject<APIResponse>(apiContent);
                 return _response;
               

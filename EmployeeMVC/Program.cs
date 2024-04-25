@@ -1,3 +1,4 @@
+using EmployeeMVC.Configuration;
 using EmployeeMVC.Models.DTOs;
 using EmployeeMVC.Services;
 using EmployeeMVC.Services.IServices;
@@ -9,6 +10,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<APIResponse>();
 builder.Services.AddScoped<EmployeeService>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
+builder.Services.AddAutoMapper(typeof(MappingConfig));
 
 builder.Services.AddHttpClient();
 

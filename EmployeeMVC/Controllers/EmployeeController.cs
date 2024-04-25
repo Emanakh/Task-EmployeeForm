@@ -1,4 +1,5 @@
-﻿using EmployeeMVC.Models.DTOs;
+﻿using AutoMapper;
+using EmployeeMVC.Models.DTOs;
 using EmployeeMVC.Services;
 using EmployeeMVC.Services.IServices;
 using Microsoft.AspNetCore.Mvc;
@@ -10,14 +11,15 @@ namespace EmployeeMVC.Controllers
     public class EmployeeController : Controller
     {
         private readonly IEmployeeService _service;
-        //private readonly IMapper _mapper;
+        private readonly IMapper _mapper;
 
-        public EmployeeController(IEmployeeService service)
-        {
-           
-            _service = service;
-        }
-        public async Task<IActionResult> Index()
+        public EmployeeController(IEmployeeService service, IMapper mapper)
+		{
+
+			_service = service;
+			_mapper = mapper;
+		}
+		public async Task<IActionResult> Index()
         {
 			List<EmployeeDTO> list = new();
 
@@ -88,17 +90,19 @@ namespace EmployeeMVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                EmployeeUpdateDTO model = new EmployeeUpdateDTO
-                {
-                    Id = dto.Id,
-                    Gender = (int)dto.Gender,
-                    FirstAppointment = dto.FirstAppointment,
-                    JobRole = (int)dto.JobRole,
-                    Name = dto.Name,
-                    StartDate = dto.StartDate,
-                    Notes = dto.Notes
+                //EmployeeUpdateDTO model = new EmployeeUpdateDTO
+                //{
+                //    Id = dto.Id,
+                //    Gender = (int)dto.Gender,
+                //    FirstAppointment = dto.FirstAppointment,
+                //    JobRole = (int)dto.JobRole,
+                //    Name = dto.Name,
+                //    StartDate = dto.StartDate,
+                //    Notes = dto.Notes
 
-                };
+                //};
+
+                var model = _mapper.Map<EmployeeUpdateDTO>(dto);
                 var response = await _service.UpdateAsync(model);
                 if (response != null && response.IsSuccess)
                 {
