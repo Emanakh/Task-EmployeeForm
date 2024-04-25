@@ -32,7 +32,7 @@ namespace Task_EmployeeForm.Repositories
 
 		
 
-		public async Task UpdateEmployee(T model)
+		public async Task Update(T model)
 		{
 			_db.Update(model);
 			await Save();

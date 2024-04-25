@@ -6,14 +6,11 @@ namespace EmployeeMVC.Services
 {
     public class EmployeeService : MainService ,IEmployeeService
     {
-        private readonly IHttpClientFactory _clientFactory;
-        private readonly APIResponse _response;
         private readonly string _url;
 
         //base service constructor require IHttpClientFactory
         public EmployeeService(IHttpClientFactory clientFactory, IConfiguration configuration, APIResponse response) : base(clientFactory, response )
         {
-            _clientFactory = clientFactory;
             _url = configuration.GetValue<string>("ServiceUrls:EmployeeAPI");
         }
 

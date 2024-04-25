@@ -17,9 +17,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(option =>
 });
 
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
-builder.Services.AddScoped<IEmployeeRepo, EmployeeRepo>();
 builder.Services.AddScoped<ApplicationDbContext>();
-builder.Services.AddScoped<DapperContext>();
+builder.Services.AddScoped<IDapperRepo, DapperRepo>();
 builder.Services.AddScoped<IGenericRepo<Employee>, GenericRepo<Employee>>();
 
 builder.Services.AddScoped<APIResponse>();

@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Task_EmployeeForm.Data;
 using Task_EmployeeForm.Models;
 using Task_EmployeeForm.Models.DTOs;
 using Task_EmployeeForm.Repositories;
@@ -12,8 +11,8 @@ namespace Task_EmployeeForm.Services
     {
         private readonly IGenericRepo<Employee> _repo;
         private readonly IMapper _mapper;   
-        private readonly DapperContext _dapper;   
-        public EmployeeService(IMapper mapper, IGenericRepo<Employee> repo, DapperContext dabber)
+        private readonly IDapperRepo _dapper;   
+        public EmployeeService(IMapper mapper, IGenericRepo<Employee> repo, IDapperRepo dabber)
         {
             _mapper = mapper;
             _repo = repo;
@@ -44,18 +43,9 @@ namespace Task_EmployeeForm.Services
 
 		public async Task UpdateAsync(EmployeeUpdateDTO dto)
 		{
-            Employee employee = new Employee
-            {
-                Id = dto.Id,
-                Name = dto.Name,
-                JobRole = dto.JobRole.ToString(),
-                Gender = dto.Gender.ToString(),
-                Notes = dto.Notes,
-                StartDate = dto.StartDate,
-                FirstAppointment = dto.FirstAppointment
-
-            };
-			 await _repo.UpdateEmployee(employee);
+           
+            var employee = _mapper.Map<Employee>(dto);
+			 await _repo.Update(employee);
 		}
 
 

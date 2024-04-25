@@ -2,7 +2,7 @@
 
 
 <div class="col-2">
-    <label asp-for="Name" class="control-label pt-2" style="font-size:20px;"></label>
+    <label asp-for="Name" class="control-label pt-2" style="font-size:20px;">Name</label>
 </div>
 <div class="col-10 pb-3">
     <input asp-for="Name" class="form-control" />
@@ -11,7 +11,7 @@
 
 <div class="row">
     <div class="col-2">
-        <label asp-for="Gender" class="control-label pt-2" style="font-size:20px;"></label>
+        <label asp-for="Gender" class="control-label pt-2" style="font-size:20px;">Gender</label>
     </div>
     <div class="col-10">
         <div class="form-group d-inline-block">
@@ -30,7 +30,7 @@
 
 
 <div class="col-2">
-    <label asp-for="JobRole" class="control-label pt-2" style="font-size:20px;"></label>
+    <label asp-for="JobRole" class="control-label pt-2" style="font-size:20px;">Role</label>
 </div>
 <div class="col-10 pb-3">
     <select asp-for="JobRole" class="form-control">
@@ -43,16 +43,16 @@
 </div>
 
 <div class="col-2">
-    <label asp-for="StartDate" class="control-label pt-2" style="font-size:20px;"></label>
+    <label asp-for="StartDate" class="control-label pt-2" style="font-size:20px;">Start Date</label>
 </div>
 <div class="col-10 pb-3">
-    <input asp-for="StartDate" class="form-control" />
+    <input asp-for="StartDate" class="form-control" type="date" />
     <span asp-validation-for="StartDate" class="text-danger"></span>
 </div>
 
 
 <div class="col-2">
-    <label asp-for="FirstAppointment" class="control-label pt-2" style="font-size: 20px;"></label>
+    <label asp-for="FirstAppointment" class="control-label pt-2" style="font-size: 20px;">First Appointment</label>
 </div>
 <div class="col-10 pb-3">
     <div class="form-check">

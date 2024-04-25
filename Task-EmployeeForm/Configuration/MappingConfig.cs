@@ -9,8 +9,9 @@ namespace Task_EmployeeForm.Configuration
         public MappingConfig()
         {
             CreateMap<Employee, EmployeeDTO>().ReverseMap();
+			CreateMap<Employee, EmployeeUpdateDTO>().ReverseMap();
 
 
-        }
-    }
+		}
+	}
 }
