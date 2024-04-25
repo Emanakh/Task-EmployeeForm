@@ -9,8 +9,13 @@
 - Handling Exception through "app.UseExceptionHandler" Middleware
 - Custom Standard API Response to handle Both Success and Fail Cases, different Results and Errors 
 - Using Automapper
-- ORMs to help in SQL Injection // Dapper for Optimizimg Data Retrival and EF core 
 - Design patterns as Generic Repositories and Dependency Injection 
+
+# Database 
+- Dapper for Optimizimg Data Retrival
+- EF core
+- ORMs to help in preventing SQL Injection 
+
 
 # Frontend "MVC"
 - Client Side Validation 
