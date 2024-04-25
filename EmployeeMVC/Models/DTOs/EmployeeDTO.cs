@@ -18,8 +18,8 @@ namespace EmployeeMVC.Models.DTOs
 
         [Required]
         public bool FirstAppointment { get; set; } = false;
-        [Required]
-        public DateTime StartDate { get; set; }
+		[Required(ErrorMessage = " Start Date is required")]
+		public DateTime StartDate { get; set; }
         public string? Notes { get; set; }
     }
 }
