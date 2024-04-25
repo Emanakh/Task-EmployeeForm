@@ -5,14 +5,14 @@
 # Backend "API"
 ## 3-Tiers architecture "DataAccess - Services - Controllers"  
 
-### Input Validation by "Data annotation Attributes and ModelState"
-### Handling Exception through "app.UseExceptionHandler" Middleware
-### Custom Standard API Response to handle Both Success and Fail Cases, different Results and Errors 
-### Using Automapper
-### ORMs to help in SQL Injection // Dapper for Optimizimg Data Retrival and EF core 
-### Design patterns as Generic Repositories and Dependency Injection 
+- Input Validation by "Data annotation Attributes and ModelState"
+- Handling Exception through "app.UseExceptionHandler" Middleware
+- Custom Standard API Response to handle Both Success and Fail Cases, different Results and Errors 
+- Using Automapper
+- ORMs to help in SQL Injection // Dapper for Optimizimg Data Retrival and EF core 
+- Design patterns as Generic Repositories and Dependency Injection 
 
 # Frontend "MVC"
-### Client Side Validation 
-### Bootstrap Framework
+- Client Side Validation 
+- Bootstrap Framework
 
